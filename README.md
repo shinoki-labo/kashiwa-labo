@@ -1,1 +1,1 @@
-# kashiwa-labo.index.html
+index.html
