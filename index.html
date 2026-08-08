@@ -44,6 +44,17 @@
     font-weight:700; cursor:pointer; letter-spacing:0.05em;
     text-decoration:none;
   }
+  .hamburger {
+    display:none; flex-direction:column; gap:5px;
+    cursor:pointer; padding:4px;
+  }
+  .hamburger span {
+    display:block; width:22px; height:2px;
+    background:#fff; border-radius:2px;
+  }
+  @media (max-width:768px) {
+    .hamburger { display:flex; }
+  }
 
   /* HERO */
   .hero {
@@ -307,6 +318,161 @@
   .footer-bar {
     height:4px;
     background:linear-gradient(90deg,var(--green-accent),var(--green-mid),var(--green-dark));
+  }
+
+  /* ========== スマホ対応 ========== */
+  @media (max-width: 768px) {
+
+    /* ナビ */
+    nav {
+      padding: 0 16px;
+      height: 52px;
+    }
+    .nav-links { display: none; }
+    .nav-cta {
+      font-size: 11px;
+      padding: 6px 14px;
+    }
+
+    /* ヒーロー */
+    .hero {
+      padding: 80px 20px 48px;
+      min-height: auto;
+    }
+    .hero-inner {
+      flex-direction: column;
+      gap: 28px;
+    }
+    .hero-catch { font-size: 26px; }
+    .hero-story p { font-size: 13px; }
+    .hero-btns {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-primary { text-align: center; padding: 14px 24px; }
+    .hero-photo-wrap { order: -1; }
+    .hero-photo {
+      width: 180px;
+      height: 220px;
+      margin: 0 auto;
+    }
+
+    /* セクション共通 */
+    section { padding: 48px 20px; }
+    .section-inner { max-width: 100%; }
+    .section-title { font-size: 22px; margin-bottom: 28px; }
+
+    /* エビデンス */
+    .evidence-grid,
+    [style*="grid-template-columns:repeat(3"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* ストーリー */
+    .story-grid {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+    .story-photo {
+      aspect-ratio: 4/3 !important;
+    }
+
+    /* キャッチコピー */
+    [style*="grid-template-columns:repeat(3,1fr)"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* 5分類カード */
+    .type-cards {
+      grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* 治療の流れ */
+    .flow-steps {
+      flex-direction: column !important;
+      gap: 12px !important;
+    }
+    .flow-step:not(:last-child)::after {
+      content: '↓' !important;
+      right: 50% !important;
+      top: auto !important;
+      bottom: -16px !important;
+      transform: translateX(50%) !important;
+    }
+
+    /* 回復ピラミッド */
+    [style*="max-width:600px"] {
+      max-width: 100% !important;
+    }
+
+    /* 料金プラン */
+    [style*="grid-template-columns:1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* キャンペーン */
+    .campaign-box {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+    }
+    .price-now { font-size: 48px !important; }
+
+    /* 対応時間・訪問エリア */
+    .contact-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* QRコード横並び→縦 */
+    [style*="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* FAQ */
+    [style*="border:1px solid #e0dbd0;border-radius:6px;overflow:hidden"] div {
+      font-size: 13px !important;
+    }
+
+    /* ぎっくり腰セクション */
+    [style*="grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px"] {
+      grid-template-columns: 1fr !important;
+    }
+    [style*="display:flex;gap:0;position:relative"] {
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+    }
+
+    /* タイプ別治療マトリックス */
+    [style*="grid-template-columns:1fr 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* 治療結果比較 */
+    [style*="display:grid;grid-template-columns:repeat(3,1fr);gap:16px"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* フッター */
+    footer { padding: 24px 20px; }
+    .footer-logo { font-size: 16px; }
+
+    /* 特別サポート枠 */
+    [style*="display:grid;grid-template-columns:1fr 1fr;gap:20px"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* お問い合わせ */
+    .contact-cta .btn-primary {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  /* タブレット対応 */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .hero-catch { font-size: 34px; }
+    .type-cards { grid-template-columns: repeat(3, 1fr) !important; }
+    section { padding: 60px 32px; }
   }
 </style>
 </head>
